@@ -15,7 +15,7 @@ jobs:
       - name: Replace last updated date in Index.html
         run: |
           DATE=$(date +"%d %B %Y")
-          sed -i "s/{{LAST_UPDATED}}/$DATE/" Index.html
+          sed -i "s/{{LAST_UPDATED}}/$DATE/" index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
