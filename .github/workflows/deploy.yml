@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Replace last updated date in Index.html
+      - name: Replace last updated date in index.html
         run: |
           DATE=$(date +"%d %B %Y")
           sed -i "s/{{LAST_UPDATED}}/$DATE/" index.html
