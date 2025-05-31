@@ -1,0 +1,213 @@
+*, *::before, *::after {
+box-sizing: border-box;
+}
+
+body {
+    font-family: "Syne Mono", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Syne Mono", sans-serif;
+}
+
+.w3-row-padding img {
+    margin-bottom: 12px
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 16px;
+}
+
+/*Top Navbar*/
+#myNavbar {
+    display:flex;
+    width: 100%;
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/*Sidebar*/
+.w3-sidebar {
+    width: 10vw;/* Set the width of the sidebar*/
+    background: #222;
+    position:fixed;
+    display: none; /* Hide sidebar by default */
+}
+
+#main {
+    width: auto;
+    box-sizing: border-box;
+}
+
+.w3-section p {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 8px 0;
+}
+
+/* Carosello Portfolio */
+.carousel-dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.carousel-dot.active {
+    background-color: #2196F3;
+}
+.carousel-prev, .carousel-next {
+    cursor: pointer;
+    font-size: 32px;
+    color: #ccc;
+    user-select: none;
+    padding: 8px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+a[href="https://www.southampton.ac.uk/"] {
+    color: #004457;
+    text-decoration: underline;
+}
+a[href="https://www.southampton.ac.uk/"]:visited {
+    color: #004457;
+}
+
+/*email*/
+a[href^="mailto:"]:hover {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+#footer {
+    background-color: #191919;
+    color: #ccc;
+    padding: 1px;
+    text-align: center;
+    width: 100%;
+}
+
+/*Mobile: fino a 320px*/
+@media (max-width: 320px) {
+    h1.w3-jumbo {
+        font-size: 56px !important;
+    }
+    p {
+        font-size: 13px;
+    }
+    #cvButton.w3-button {
+    display: block;
+    margin: 24px auto;
+    text-align: center;
+    }
+    .southampton-link {
+    font-size: 12px !important;
+  }
+}
+
+
+/* Mobile: fino a 480px
+    Navbar orizzontale in alto, sidebar nascosta*/
+@media (max-width: 480px) {
+    .section-container {
+        margin: 0 auto !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        text-align: center;
+    }
+    #main {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+   
+
+    #myNavbar {
+        display: flex;
+    }
+    .w3-sidebar {
+        display: none;
+    }
+}
+
+/* Little Tablet: 481px–816px
+   Navbar orizzontale in alto, sidebar nascosta */
+@media (min-width: 481px) and (max-width: 816px) {
+    .section-container {
+        padding: 32px 16px;
+        max-width: 95vw;
+    }
+    #main {
+        padding-top: 48px;
+        margin-left: 0;
+        max-width: 100vw;
+    }
+    #myNavbar {
+        display: flex !important;
+    }
+    .w3-sidebar {
+        display: none;
+    }
+}
+
+/* Tablet: 817px–1024px*/
+@media (min-width: 817px) and (max-width: 1024px) {
+    #myNavbar {
+        display: none;
+    }
+    .w3-sidebar {
+        display: block;
+        width: 18vw;
+        left: 0;
+        top: 0;
+        height: 100vh;
+    }
+    #main {
+        margin-left: 18vw;
+        padding-top: 0;
+        max-width: 82vw;
+    }
+    .section-container {
+        padding: 32px 8px;
+        max-width: 700px;
+    }
+}
+
+/* Desktop: >1024px */
+@media (min-width: 1025px) {
+    #myNavbar {
+        display: none;
+    }
+    .w3-sidebar {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+    }
+    #main {
+        margin-left: 10vw;
+        padding-top: 0;
+    }
+    .section-container {
+        padding: 64px 32px;
+    }
+}
+
+/* Icons IT */
+@media (max-width: 600px) {
+    .icone-tech {
+    text-align: center !important;
+    }
+}
