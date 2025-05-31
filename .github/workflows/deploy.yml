@@ -17,6 +17,10 @@ jobs:
           DATE=$(date +"%d %B %Y")
           sed -i "s/{{LAST_UPDATED}}/$DATE/" index.html
 
+      - name: Clean .git in publish_dir
+        run: |
+          if [ -d ".git" ]; then rm -rf .git; fi
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
