@@ -12,18 +12,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Convert line endings to LF
-        run: |
-          sed -i 's/\r$//' index.html
-      - name: Replace last updated date in index.html
-        run: |
-          DATE=$(date +"%d %B %Y")
-          sed -i -e "s/{{LAST_UPDATED}}/$DATE/g" index.html
+    
+      #- name: Replace last updated date in index.html
+      #  run: |
+      #    DATE=$(date +"%d %B %Y")
+      #    sed -i -e "s/{{LAST_UPDATED}}/$DATE/g" index.html
 
-      - name: Clean .git in publish_dir
-        run: |
-          if [ -d ".git" ]; then rm -rf .git; fi
+      #- name: Clean .git in publish_dir
+      #  run: |
+      #    if [ -d ".git" ]; then rm -rf .git; fi
 
+      
+      - name: Replace placeholder with Python
+        run: |
+          python3 -c "
+          import datetime
+          with open('index.html', 'r', encoding='utf-8') as f:
+            content = f.read()
+          content = content.replace('{{LAST_UPDATED}}', datetime.datetime.now().strftime('%d %B %Y'))
+          with open('index.html', 'w', encoding='utf-8') as f:
+            f.write(content)
+          "
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
