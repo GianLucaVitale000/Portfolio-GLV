@@ -1,4 +1,4 @@
-**Présentation**
+# Présentation (fr)/Presentazione (it)
 
 Ce site est le **portfolio personnel** de **Gian Luca Vitale**, développeur junior spécialisé en droit du travail, paie et solutions numériques RH.
 Réalisé en HTML, CSS et JavaScript, il présente mon parcours, mes compétences, mes projets, ainsi que mes coordonnées professionnelles.
@@ -27,14 +27,14 @@ Utilisation
 
 Le code source est ouvert : vous pouvez le cloner, l’étudier et l’adapter dans le respect de la licence EUPL-1.2.
 Pour toute question ou collaboration, contactez-moi via le formulaire du site ou sur [LinkedIn](https://www.linkedin.com/in/gian-luca-vitale-05b82624/).
-<hr>
 
-**Presentazione**
+---
 
 Questo sito è il **portfolio** di **Gian Luca Vitale**, sviluppatore junior specializzato in diritto del lavoro, paghe e soluzioni digitali HR.
 Realizzato in HTML, CSS e JavaScript, presenta il mio percorso, le mie competenze, i miei progetti e i miei contatti professionali.
 
 Funzionalità principali:
+
 - Presentazione dettagliata del mio profilo, delle competenze tecniche e giuridiche.
 - Sezione Portfolio con esempi di progetti realizzati (frontend, backend, audit paghe, ecc.).
 - Testimonianze di collaboratori e clienti.
