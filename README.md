@@ -58,4 +58,3 @@ Utilizzo
 
 Il codice sorgente è open source: puoi clonarlo, studiarlo e adattarlo nel rispetto della licenza EUPL-1.2.
 Per qualsiasi domanda o collaborazione, contattami tramite il modulo del sito o su [LinkedIn](https://www.linkedin.com/in/gian-luca-vitale-05b82624/).
-
