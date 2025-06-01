@@ -17,6 +17,10 @@ jobs:
           python3 -c "
           import datetime
           import locale
+          try:
+            locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
+          except locale.Error:
+            locale.setlocale(locale.LC_TIME, 'fr_FR')
           locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
           with open('index.html', 'r', encoding='utf-8') as f:
             content = f.read()
