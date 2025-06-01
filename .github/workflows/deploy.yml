@@ -12,6 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Convert line endings to LF
+        run: |
+          sed -i 's/\r$//' index.html
       - name: Replace last updated date in index.html
         run: |
           DATE=$(date +"%d %B %Y")
