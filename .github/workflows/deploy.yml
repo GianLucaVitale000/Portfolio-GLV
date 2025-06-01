@@ -11,10 +11,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install French locale
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y locales
+          sudo locale-gen fr_FR.UTF-8
+          sudo dpkg-reconfigure locales
       
       - name: Replace placeholder with Python
         run: |
-          python3 -c "
+          python3 << EOF
           import datetime
           import locale
           try:
@@ -27,7 +34,7 @@ jobs:
           content = content.replace('{{LAST_UPDATED}}', datetime.datetime.now().strftime('%d %B %Y'))
           with open('index.html', 'w', encoding='utf-8') as f:
             f.write(content)
-          "
+          EOF
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
