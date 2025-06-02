@@ -27,7 +27,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Syne+Mono&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="style.css">
-
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
@@ -48,14 +47,11 @@
   }
 }
 </script>
-
-
 </head>
 
 <body class="w3-black">
-  
 
-  <!-- Sidebar - hidden on small screens -->
+<!-- Sidebar - hidden on small screens -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-left">
   <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-text-green w3-hover-black">
   <p class="w3-right">HOME</p></a>
@@ -97,10 +93,10 @@
     </p>
     <!--Icons social-->
     <a href="https://www.linkedin.com/in/gian-luca-vitale-05b82624" target="_blank" style="text-decoration: none;">
-    <i class="fa-brands fa-linkedin-in w3-hover-opacity" style="font-size: 32px; margin-right: 10px;" title="MyLinkedIn"></i>
+    <i class="fa-brands fa-linkedin-in w3-hover-opacity" style="font-size: 32px; margin-right: 10px;" aria-label="Profilo LinkedIn" title="MyLinkedIn"></i>
     </a>
     <a href="https://github.com/GianlucaVitale000" target="_blank" style="text-decoration: none;">
-    <i class="fa-brands fa-github w3-hover-opacity" style="font-size: 32px;" title="MyGitHub"></i>
+    <i class="fa-brands fa-github w3-hover-opacity" style="font-size: 32px;" aria-label="Profilo GitHub" title="MyGitHub"></i>
     </a><br>
     <!--CV-->
     <button id="cvButton" class="w3-button w3-light-grey w3-padding-large w3-section">Téléchargez mon CV ici <i class="fa-solid fa-download"></i>
@@ -124,12 +120,14 @@
       <img src="images/figma.svg" alt="Figma" style="height:32px;vertical-align:middle;margin-right:12px;">
       <img src="images/latex.svg" alt="LaTeX" style="height:32px;vertical-align:middle;">
     </div>
-    <!-- Testimonials -->
+    <!-- Témoignages -->
     <h3 class="w3-padding-16 w3-text-light-grey">Témoignages</h3>  
     <img src="images/OIP.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p class="w3-small"><span class="w3-large w3-margin-right w3-text-grey">Mr. F. Ciancetta.<br></span>Postgraduate Researcher and Associate Lecturer<br><span style="color: #004457; font-weight: bolder; font-size:small;">
-    <a href="https://www.southampton.ac.uk/" target="_blank" class="southampton-link">University of Southampton</a></span>
-    <img src="images/output-onlinetools.png" alt="University of Southampton" style="height: 28px; vertical-align: middle; "></p>
+    <p class="w3-small"><span class="w3-large w3-margin-right w3-text-grey">Mr. F. Ciancetta.<br></span>Doctoral Researcher and Associate Lecturer<br>
+    <span style="color: #004457; font-weight: bolder; font-size:medium;">
+    <a href="https://www.southampton.ac.uk/" target="_blank" class="southampton-link w3-hover-text-green" style="font-weight:bolder">University of Southampton</a></span>
+    <!--<img src="images/output-onlinetools.png" alt="University of Southampton" style="height: 28px; vertical-align: middle; ">-->
+    </p>
     <p class="w3-text-grey">He saved me from a web disaster.</p><br>
     
     <img src="images/Cri.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
@@ -221,7 +219,7 @@
     <form action="https://formsubmit.co/gianluca.vitale@studio.unibo.it" method="POST">
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Nom" required name="Nom"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Sujet" required name="Suject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Sujet" required name="Sujet"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Écrivez votre message" required name="Message"></p>
       <!--GDPR consent-->
       <p id="consentFieldWrapper" style="display:none"><input class="w3-input w3-padding-16" type="text" name="Consentement" id="consentField" value="Le traitement des données personnelles a été autorisé." readonly></p>
@@ -279,8 +277,8 @@
     <p class="w3-small">Powered by <a href="https://www.linkedin.com/in/gian-luca-vitale-05b82624/"target="_blank"
     class="w3-hover-text-green">Gian Luca Vitale</a>
     <span style="margin-left:10px;">
-      <a href="https://www.linkedin.com/in/gian-luca-vitale-05b82624/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="https://github.com/GianlucaVitale000" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/gian-luca-vitale-05b82624/" target="_blank" aria-label="Profilo LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://github.com/GianlucaVitale000" target="_blank" aria-label="Profilo GitHub"><i class="fa-brands fa-github"></i></a>
     </span>
     <br>
     &copy; 2025 Gian Luca Vitale, distribué sous <a href="https://eupl.eu/1.2/fr" target="_blank" class="w3-hover-text-green">licence EUPL-1.2</a><br>
