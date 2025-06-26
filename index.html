@@ -217,12 +217,30 @@
     <p class="w3-text-grey">Voici quelques projets récents qui illustrent mes compétences ...</p>
     <!-- tableau de bord -->
 <div class="w3-center">
-  <img src="images/a.png" alt="tableau de bord d'entreprise" style="max-width:100%; width:100%;">
+  <div class="carousel-container dashboard-carousel" style="position:relative; max-width:100%;">
+    <img class="dashboard-slide" src="images/d1.jpeg" style="width:100%; display:block;" alt="Dashboard slide 1">
+    <img class="dashboard-slide" src="images/d2.jpeg" style="width:100%; display:none;" alt="Dashboard slide 2">
+    <img class="dashboard-slide" src="images/d3.jpeg" style="width:100%; display:none;" alt="Dashboard slide 3">
+    <img class="dashboard-slide" src="images/d4.jpeg" style="width:100%; display:none;" alt="Dashboard slide 4">
+    <img class="dashboard-slide" src="images/d5.jpeg" style="width:100%; display:none;" alt="Dashboard slide 5">
+    <img class="dashboard-slide" src="images/d6.jpeg" style="width:100%; display:none;" alt="Dashboard slide 6">
+  </div>
+  
+  <!-- Punti di navigazione -->
+  <div style="text-align:center; margin-top:8px;">
+    <span class="dashboard-dot" onclick="dashboardCurrentSlide(1)"></span>
+    <span class="dashboard-dot" onclick="dashboardCurrentSlide(2)"></span>
+    <span class="dashboard-dot" onclick="dashboardCurrentSlide(3)"></span>
+    <span class="dashboard-dot" onclick="dashboardCurrentSlide(4)"></span>
+    <span class="dashboard-dot" onclick="dashboardCurrentSlide(5)"></span>
+    <span class="dashboard-dot" onclick="dashboardCurrentSlide(6)"></span>
+  </div>
   <p class="w3-text-grey w3-padding-16" style="max-width:100%; margin:auto; text-align: left;">
-    Fragment de tableau de bord d'entreprise (étude) - Visualisation de données industrielles issues de plusieurs lignes de production,
-    visant à mettre en évidence : 1. la composition des déchets industriels (diagramme circulaire à gauche); 2. pour chaque produit
-    (voir menu déroulant), l’évolution temporelle des volumes de production vs. pièces rejetées (graphique linéaire à droite).<br>
-    Frontend : Angular 17 / Backend : Java 21 (JPA, Hibernate, MySQL)</p>
+    Fragment de tableau de bord d'entreprise (étude) - « Data visualisation » visant à montrer :<br>
+    1. la composition des déchets industriels (1<sup>re</sup> carte à gauche) ;<br>
+    2. l’évolution production vs. rejets par produit (2<sup>e</sup> carte à droite) ;<br>
+    3. la comparaison des prix (3<sup>e</sup> carte)<br>
+    Techno : Angular 17 / Java 21 (RESTful – JAX-RS/RestEasy, JPA, Hibernate, MySQL)</p>
 </div>
     <!-- Grid for portfolio -->
     <div class="w3-row-padding">
