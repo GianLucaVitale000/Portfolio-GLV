@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var cvButton = document.getElementById("cvButton");
   if (cvButton) {
     cvButton.addEventListener("click", function() {
-      window.open("https://drive.google.com/file/d/1XPy7xr_d98g9oZuhS7pRqGF5sgtEw2k_/view?usp=sharing", "_blank");
+      window.open("https://drive.google.com/file/d/1_6Ev2WzMjCg4F4IzJOKYbvAEvuorq8nK/view?usp=sharing", "_blank");
     }
     );
   }
