@@ -1,0 +1,6 @@
+{
+  "extends": "default",
+  "ignore-schemas": ["http", "https"],
+  "files": ["**/*.md"],
+  "ignores": ["LICENSE"]
+}
