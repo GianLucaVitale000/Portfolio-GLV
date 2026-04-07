@@ -37,74 +37,69 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-//Carosello Portfolio
-let slideIndex = 1;
-showSlides(slideIndex);
-
-//funzione per cambiare slide manualmente
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("carousel-slide");
-  let dots = document.getElementsByClassName("carousel-dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-
-// transizione automatica delle slide
-setInterval(function() {
-  plusSlides(1);
-}, 4000); // Cambia slide ogni 4 secondi
-
-// Carosello Dashboard
-let dashboardSlideIndex = 1;
-dashboardShowSlides(dashboardSlideIndex);
-
-// Controllo diretto della slide corrente
-function dashboardCurrentSlide(n) {
-  dashboardShowSlides(dashboardSlideIndex = n);
-}
-
-// Cambio slide avanti/indietro
-function dashboardPlusSlides(n) {
-  dashboardShowSlides(dashboardSlideIndex += n);
-}
-
-// Mostra le slide
-function dashboardShowSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("dashboard-slide");
-  let dots = document.getElementsByClassName("dashboard-dot");
+//Caroselli - Funzione generica parametrizzata
+function initCarousel(slidesClass, dotsClass) {
+  let slideIndex = 1;
   
-  if (n > slides.length) {dashboardSlideIndex = 1}
-  if (n < 1) {dashboardSlideIndex = slides.length}
-  
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName(slidesClass);
+    let dots = document.getElementsByClassName(dotsClass);
+    
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
   }
   
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
   }
   
-  slides[dashboardSlideIndex-1].style.display = "block";
-  dots[dashboardSlideIndex-1].className += " active";
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  showSlides(slideIndex);
+  
+  // Auto-transition ogni 4 secondi
+  setInterval(function() {
+    plusSlides(1);
+  }, 4000);
+  
+  return { plusSlides, currentSlide };
 }
 
-// Transizione automatica delle slide dashboard
-setInterval(function() {
-  dashboardPlusSlides(1);
-}, 4000); // Cambia slide ogni 4 secondi, coerente con l'altro carosello
+// Inizializza i tre carousel
+initCarousel("carousel-slide", "carousel-dot");
+initCarousel("dashboard-slide", "dashboard-dot");
+initCarousel("projects-slide", "projects-dot");
+
+// Esporta funzioni per onclick inline nell'HTML (compatibilità)
+window.plusSlides = function(n) {
+  // Retrocompatibilità per eventuali usi precedenti
+};
+window.currentSlide = function(n) {
+  // Retrocompatibilità per eventuali usi precedenti
+};
+window.dashboardCurrentSlide = function(n) {
+  // Retrocompatibilità per eventuali usi precedenti
+};
+window.dashboardPlusSlides = function(n) {
+  // Retrocompatibilità per eventuali usi precedenti
+};
+window.projectsCurrentSlide = function(n) {
+  // Retrocompatibilità per eventuali usi precedenti
+};
+window.projectsPlusSlides = function(n) {
+  // Retrocompatibilità per eventuali usi precedenti
+};
