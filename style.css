@@ -20,6 +20,12 @@ h1,h2,h3,h4,h5,h6 {
     padding: 64px 16px;
 }
 
+/*Allineamento carousel*/
+.w3-center {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /*Top Navbar*/
 #myNavbar {
     display:flex;
@@ -81,6 +87,29 @@ h1,h2,h3,h4,h5,h6 {
 
 .dashboard-dot.active {
     background-color: #2196F3;
+}
+
+/* Carosello Projects */
+.projects-dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.projects-dot.active {
+    background-color: #2196F3;
+}
+
+/* Standardizzazione altezza immagini carousel */
+.carousel-container img,
+.projects-slide {
+    object-fit: contain;
+    max-height: 500px;
 }
 
 /*
