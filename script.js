@@ -37,9 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-//Caroselli - Funzione generica parametrizzata
+//Carrousel
 function initCarousel(slidesClass, dotsClass) {
   let slideIndex = 1;
+  let autoPlayInterval;
   
   function showSlides(n) {
     let i;
@@ -48,65 +49,55 @@ function initCarousel(slidesClass, dotsClass) {
     
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
-    
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
-    
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
-    
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
   }
-  
+  /* Réinitialise la lecture automatique */
+  function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(function() {
+      plusSlides(1);
+    }, 4000);
+  }
+  /* Passe au slide suivant */
   function plusSlides(n) {
     showSlides(slideIndex += n);
+    resetAutoPlay();
   }
-  
+  /* Passe au slide courant */
   function currentSlide(n) {
     showSlides(slideIndex = n);
+    resetAutoPlay();
   }
   
   showSlides(slideIndex);
   
-  // Auto-transition ogni 4 secondi
-  setInterval(function() {
+  /* Lecture automatique: chaque 4 secondes */
+  autoPlayInterval = setInterval(function() {
     plusSlides(1);
   }, 4000);
   
   return { plusSlides, currentSlide };
 }
 
-// Inizializza i quattro carousel
-initCarousel("carousel-slide", "carousel-dot");
-initCarousel("dashboard-slide", "dashboard-dot");
-initCarousel("projects-slide", "projects-dot");
-initCarousel("sushizen-slide", "sushizen-dot");
+// Initialisation des carrousels
+const carousel1 = initCarousel("carousel-slide", "carousel-dot");
+const dashboard = initCarousel("dashboard-slide", "dashboard-dot");
+const projects = initCarousel("projects-slide", "projects-dot");
+const sushizen = initCarousel("sushizen-slide", "sushizen-dot");
 
-// Esporta funzioni per onclick inline nell'HTML (compatibilità)
-window.plusSlides = function(n) {
-  // Retrocompatibilità per eventuali usi precedenti
-};
-window.currentSlide = function(n) {
-  // Retrocompatibilità per eventuali usi precedenti
-};
-window.dashboardCurrentSlide = function(n) {
-  // Retrocompatibilità per eventuali usi precedenti
-};
-window.dashboardPlusSlides = function(n) {
-  // Retrocompatibilità per eventuali usi precedenti
-};
-window.projectsCurrentSlide = function(n) {
-  // Retrocompatibilità per eventuali usi precedenti
-};
-window.projectsPlusSlides = function(n) {
-  // Retrocompatibilità per eventuali usi precedenti
-};
-window.sushizenCurrentSlide = function(n) {
-  // Retrocompatibilità per eventuali usi precedenti
-};
-window.sushizenPlusSlides = function(n) {
-  // Retrocompatibilità per eventuali usi precedenti
-};
+// Exposer les fonctions globalement pour les boutons de navigation
+window.plusSlides = carousel1.plusSlides;
+window.currentSlide = carousel1.currentSlide;
+window.dashboardCurrentSlide = dashboard.currentSlide;
+window.dashboardPlusSlides = dashboard.plusSlides;
+window.projectsCurrentSlide = projects.currentSlide;
+window.projectsPlusSlides = projects.plusSlides;
+window.sushizenCurrentSlide = sushizen.currentSlide;
+window.sushizenPlusSlides = sushizen.plusSlides;
