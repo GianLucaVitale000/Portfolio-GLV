@@ -79,10 +79,11 @@ function initCarousel(slidesClass, dotsClass) {
   return { plusSlides, currentSlide };
 }
 
-// Inizializza i tre carousel
+// Inizializza i quattro carousel
 initCarousel("carousel-slide", "carousel-dot");
 initCarousel("dashboard-slide", "dashboard-dot");
 initCarousel("projects-slide", "projects-dot");
+initCarousel("sushizen-slide", "sushizen-dot");
 
 // Esporta funzioni per onclick inline nell'HTML (compatibilità)
 window.plusSlides = function(n) {
@@ -101,5 +102,11 @@ window.projectsCurrentSlide = function(n) {
   // Retrocompatibilità per eventuali usi precedenti
 };
 window.projectsPlusSlides = function(n) {
+  // Retrocompatibilità per eventuali usi precedenti
+};
+window.sushizenCurrentSlide = function(n) {
+  // Retrocompatibilità per eventuali usi precedenti
+};
+window.sushizenPlusSlides = function(n) {
   // Retrocompatibilità per eventuali usi precedenti
 };
